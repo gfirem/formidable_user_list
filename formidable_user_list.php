@@ -17,6 +17,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'class/FormidableUserListManager.php';
+require 'plugin-update-checker/plugin-update-checker.php';
+
+$className = PucFactory::getLatestClassVersion('PucGitHubChecker');
+$myUpdateChecker = new $className(
+	'https://github.com/gfirem/formidable_user_list/',
+	__FILE__,
+	'master'
+);
+
+
 
 function FormidableUserListBootLoader() {
 	add_action( 'plugins_loaded', 'setFormidableUserListTranslation' );
