@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Formidable user list\n"
+"POT-Creation-Date: 2016-06-26 10:44-0400\n"
+"PO-Revision-Date: 2016-06-26 10:47-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: formidable_user_list.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2;t\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: class/FormidableUserListAdmin.php:24
+msgid "User List"
+msgstr "Lista de usuarios"
+
+#: class/FormidableUserListAdmin.php:41 class/FormidableUserListAdmin.php:92
+msgid "Select roles to get users"
+msgstr "Selecciona el rol del cual se obtendrán los usuarios"
+
+#: class/FormidableUserListAdmin.php:74
+msgid "Show list of user from selected role in frontend"
+msgstr "Mostrar lista de usuarios en el frontend del rol seleccionado"
+
+#: class/FormidableUserListAdmin.php:102
+msgid "Roles"
+msgstr "Roles"
+
+#: class/FormidableUserListAdmin.php:104
+msgid "Select role to get users, by default Editor"
+msgstr ""
+"Seleccionar el rol del cual se obtendrán los usuarios, por defecto Editor"
+
+#. Plugin Name of the plugin/theme
+msgid "Formidable user list"
+msgstr "Formidable lista de usuarios"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/gfirem/formidable_user_list"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Select user from select and save id of user"
+msgstr "Seleccionar un usuario de una lista desplegable para guardar su ID"
+
+#. Author of the plugin/theme
+msgid "Guillermo Figueroa Mesa"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wwww.gfirem.com"
+msgstr ""
