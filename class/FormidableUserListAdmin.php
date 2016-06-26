@@ -49,15 +49,6 @@ class FormidableUserListAdmin {
 		return $fieldData;
 	}
 
-	private function getRolesArray() {
-		global $wp_roles;
-
-		$all_roles      = $wp_roles->roles;
-		$editable_roles = apply_filters( 'editable_roles', $all_roles );
-
-		return $editable_roles;
-	}
-
 	/**
 	 * Show the field placeholder in the admin area
 	 *
@@ -174,13 +165,47 @@ class FormidableUserListAdmin {
 		if ( $field->type != 'userlist' || empty( $value ) ) {
 			return $value;
 		}
-		?>
-		<div style="display: none;"><?= json_encode( $field ) ?></div>
-		<?php
+
 		return $value;
 	}
 
-	private function getUserList($roles) {
+	/**
+	 * Process shortCode with attr
+	 *
+	 * @param $value
+	 * @param $tag
+	 * @param $attr This be one of next: id, email, name, login
+	 * @param $field
+	 *
+	 * @return string
+	 */
+	public function shortCodeFormidableUserListReplace($value, $tag, $attr, $field){
+		if ( $field->type != 'userlist' || empty( $value ) ) {
+			return $value;
+		}
+
+		$internal_attr = shortcode_atts( array(
+			'show' => 'id',
+		), $attr );
+
+		if($internal_attr['show'] == 'id'){
+			return $value;
+		}
+
+		$user = get_userdata($value);
+		$user_field = $internal_attr['show'];
+
+		return $user->$user_field;
+	}
+
+	/**
+	 * Get user list for given role.
+	 *
+	 * @param $roles
+	 *
+	 * @return array
+	 */
+	private function getUserList( $roles ) {
 		global $wpdb;
 		$users   = get_users( array( 'fields' => array( 'ID', 'user_login', 'display_name' ), 'role__in' => array( $roles ), 'blog_id' => $GLOBALS['blog_id'], 'orderby' => 'display_name' ) );
 		$options = array( '' => '' );

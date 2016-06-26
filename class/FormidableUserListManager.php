@@ -6,6 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 class FormidableUserListManager {
+	/**
+	 * @var FormidableUserListLoader
+	 */
 	protected $loader;
 
 	protected $plugin_slug;
@@ -46,6 +49,7 @@ class FormidableUserListManager {
 		$this->loader->add_action( 'frm_update_field_options', $admin, 'update' . self::getShort() . 'Options', 10, 3 );
 		$this->loader->add_action( 'frm_form_fields', $admin, 'show' . self::getShort() . 'FrontField', 10, 2 );
 		$this->loader->add_action( 'frm_display_value', $admin, 'display' . self::getShort() . 'AdminField', 10, 3 );
+		$this->loader->add_filter( 'frmpro_fields_replace_shortcodes', $admin, 'shortCode' . self::getShort() . 'Replace', 10, 4 );
 
 	}
 
