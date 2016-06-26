@@ -3,7 +3,7 @@
  * Plugin Name:       Formidable user list
  * Plugin URI:        https://github.com/gfirem/formidable_user_list
  * Description:       Select user from select and save id of user
- * Version:           1.3
+ * Version:           1.1
  * Author:            Guillermo Figueroa Mesa
  * Author URI:        http://wwww.gfirem.com
  * Text Domain:       formidable_user_list-locale
@@ -20,11 +20,7 @@ require_once plugin_dir_path( __FILE__ ) . 'class/FormidableUserListManager.php'
 
 require 'plugin-update-checker/plugin-update-checker.php';
 
-$className       = PucFactory::getLatestClassVersion( 'PucGitHubChecker' );
-$myUpdateChecker = new $className(
-	'http://gfirem.com/update-services/?action=get_metadata&slug=formidable_user_list',
-	__FILE__
-);
+$myUpdateChecker = PucFactory::buildUpdateChecker( 'http://gfirem.com/update-services/?action=get_metadata&slug=formidable_user_list', __FILE__ );
 
 
 function FormidableUserListBootLoader() {
