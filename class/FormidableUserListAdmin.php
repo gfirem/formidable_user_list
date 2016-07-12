@@ -7,10 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class FormidableUserListAdmin {
 	protected $version;
 	private $slug;
+	private $gManager;
 
-	public function __construct( $version, $slug ) {
+	public function __construct( $version, $slug, $gManager ) {
 		$this->version = $version;
 		$this->slug    = $slug;
+		$this->gManager    = $gManager;
 	}
 
 	/**
@@ -179,7 +181,7 @@ class FormidableUserListAdmin {
 	 *
 	 * @return string
 	 */
-	public function shortCodeFormidableUserListReplace($value, $tag, $attr, $field){
+	public function shortCodeFormidableUserListReplace( $value, $tag, $attr, $field ) {
 		if ( $field->type != 'userlist' || empty( $value ) ) {
 			return $value;
 		}
@@ -188,11 +190,11 @@ class FormidableUserListAdmin {
 			'show' => 'id',
 		), $attr );
 
-		if($internal_attr['show'] == 'id'){
+		if ( $internal_attr['show'] == 'id' ) {
 			return $value;
 		}
 
-		$user = get_userdata($value);
+		$user       = get_userdata( $value );
 		$user_field = $internal_attr['show'];
 
 		return $user->$user_field;
@@ -215,4 +217,38 @@ class FormidableUserListAdmin {
 
 		return $options;
 	}
+
+	/**
+	 * Add setting page to global formidable settings
+	 *
+	 * @param $sections
+	 *
+	 * @return mixed
+	 */
+	public function addFormidableUserListSettingPage( $sections ) {
+		$sections['userlist'] = array(
+			'class'    => 'FormidableUserListSettings',
+			'function' => 'route',
+		);
+
+		return $sections;
+	}
+
+	/**
+	 * Add a "Settings" link to the plugin row in the "Plugins" page.
+	 *
+	 * @param $links
+	 * @param string $pluginFile
+	 *
+	 * @return array
+	 * @internal param array $pluginMeta Array of meta links.
+	 */
+	public function addFormidableUserListSettingLink( $links, $pluginFile ) {
+		$link = sprintf( '<a href="%s">%s</a>', esc_attr( admin_url( 'admin.php?page=formidable-settings&t=userlist_settings' ) ), FormidableUserListManager::t( "Settings" ) );
+		array_unshift( $links, $link );
+
+		return $links;
+	}
+
+
 }
