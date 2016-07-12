@@ -3,7 +3,7 @@
  * Plugin Name:       Formidable user list
  * Plugin URI:        https://github.com/gfirem/formidable_user_list
  * Description:       Select user from select and save id of user
- * Version:           1.6
+ * Version:           1.06
  * Author:            Guillermo Figueroa Mesa
  * Author URI:        http://wwww.gfirem.com
  * Text Domain:       formidable_user_list-locale
