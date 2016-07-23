@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Formidable user list\n"
-"POT-Creation-Date: 2016-06-26 10:44-0400\n"
-"PO-Revision-Date: 2016-06-26 10:47-0400\n"
+"POT-Creation-Date: 2016-07-22 23:04-0400\n"
+"PO-Revision-Date: 2016-07-22 23:12-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -20,26 +20,134 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: class/FormidableUserListAdmin.php:24
+#: class/FormidableUserListAdmin.php:26
 msgid "User List"
 msgstr "Lista de usuarios"
 
-#: class/FormidableUserListAdmin.php:41 class/FormidableUserListAdmin.php:92
+#: class/FormidableUserListAdmin.php:43 class/FormidableUserListAdmin.php:85
 msgid "Select roles to get users"
 msgstr "Selecciona el rol del cual se obtendrán los usuarios"
 
-#: class/FormidableUserListAdmin.php:74
+#: class/FormidableUserListAdmin.php:67
 msgid "Show list of user from selected role in frontend"
 msgstr "Mostrar lista de usuarios en el frontend del rol seleccionado"
 
-#: class/FormidableUserListAdmin.php:102
+#: class/FormidableUserListAdmin.php:95
 msgid "Roles"
 msgstr "Roles"
 
-#: class/FormidableUserListAdmin.php:104
+#: class/FormidableUserListAdmin.php:97
 msgid "Select role to get users, by default Editor"
 msgstr ""
 "Seleccionar el rol del cual se obtendrán los usuarios, por defecto Editor"
+
+#: class/FormidableUserListAdmin.php:248
+msgid "Settings"
+msgstr "Ajustes"
+
+#: class/FormidableUserListSettings.php:23
+msgid "Licence Data"
+msgstr "Datos de licencia"
+
+#: class/FormidableUserListSettings.php:26
+msgid "Order Key"
+msgstr "Llave"
+
+#: class/FormidableUserListSettings.php:27
+msgid "Key status: "
+msgstr "Estado de la llave:"
+
+#: class/FormidableUserListSettings.php:31
+msgid "Order key send to you with order confirmation, to get updates."
+msgstr ""
+"Llave que se le envió con la confirmación de la orden, para obtener las "
+"actualizaciones"
+
+#: class/GManagerFactory.php:48 class/GManagerFactory.php:85
+#: class/GManagerFactory.php:132 class/GManagerFactory.php:187
+msgid "Error Handling server connections"
+msgstr "Error manejando la conexión con el servidor"
+
+#: class/GManagerFactory.php:79
+msgid "Licence susses deactivated"
+msgstr "Licencia desactivada correctamente"
+
+#: class/GManagerFactory.php:82
+msgid "Licence deactivated request error"
+msgstr "Error desactivando la licencia"
+
+#: class/GManagerFactory.php:89 class/GManagerFactory.php:191
+msgid "Not licence key detected. Please set."
+msgstr "No se detecto ninguna llave de licencia. Establezca alguna."
+
+#: class/GManagerFactory.php:92
+msgid "Licence already deactivated"
+msgstr "La licencia ya fue desactivada"
+
+#: class/GManagerFactory.php:122
+msgid "Licence susses activated"
+msgstr "Licencia activada satisfactoriamente"
+
+#: class/GManagerFactory.php:126
+msgid "Licence activating error"
+msgstr "Error activando la licencia"
+
+#: class/GManagerFactory.php:129
+msgid "Licence activation request error"
+msgstr "Error en la petición de activación de la licencia"
+
+#: class/GManagerFactory.php:136
+msgid "Licence already activated"
+msgstr "La licencia ya se activo"
+
+#: class/GManagerFactory.php:165
+msgid "Licence is active"
+msgstr "Licencia activa"
+
+#: class/GManagerFactory.php:169
+msgid "Licence is inactive"
+msgstr "La licencia es inactiva"
+
+#: class/GManagerFactory.php:176
+msgid "Invalid license key"
+msgstr "Llave de licencia invalida"
+
+#: class/GManagerFactory.php:180
+msgid "Invalid provided data"
+msgstr "Datos invalidos"
+
+#: class/GManagerFactory.php:184
+msgid "Licence status request unsuccessfully"
+msgstr "Error en la petición de estado de la licencia"
+
+#: formidable_user_list.php:49
+msgid "This plugins required Formidable to run!"
+msgstr "Este Plugin necesita de Formidable para funcionar!"
+
+#: formidable_user_list.php:50
+msgid "Formidable User List"
+msgstr "Formidable Lista de Usuarios"
+
+#: plugin-update-checker/github-checker.php:119
+msgid "There is no changelog available."
+msgstr "No hay lista de cambios disponible"
+
+#: plugin-update-checker/plugin-update-checker.php:763
+msgid "Check for updates"
+msgstr "Comprobar actualizaciones"
+
+#: plugin-update-checker/plugin-update-checker.php:807
+msgid "This plugin is up to date."
+msgstr "Esta al día."
+
+#: plugin-update-checker/plugin-update-checker.php:809
+msgid "A new version of this plugin is available."
+msgstr "Hay una versión nueva disponible."
+
+#: plugin-update-checker/plugin-update-checker.php:811
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Estado de la actualización desconocido \"%s\""
 
 #. Plugin Name of the plugin/theme
 msgid "Formidable user list"
