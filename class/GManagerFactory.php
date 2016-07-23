@@ -1,6 +1,6 @@
 <?php
 
-if ( ! class_exists( 'GManager', false ) ):
+if ( ! class_exists( 'GManager_1_0', false ) ):
 
 	/**
 	 * Class GManagerFactory

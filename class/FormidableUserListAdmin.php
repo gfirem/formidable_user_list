@@ -244,9 +244,10 @@ class FormidableUserListAdmin {
 	 * @internal param array $pluginMeta Array of meta links.
 	 */
 	public function addFormidableUserListSettingLink( $links, $pluginFile ) {
-		$link = sprintf( '<a href="%s">%s</a>', esc_attr( admin_url( 'admin.php?page=formidable-settings&t=userlist_settings' ) ), FormidableUserListManager::t( "Settings" ) );
-		array_unshift( $links, $link );
-
+		if($pluginFile == 'formidable_user_list/formidable_user_list.php') {
+			$link = sprintf( '<a href="%s">%s</a>', esc_attr( admin_url( 'admin.php?page=formidable-settings&t=userlist_settings' ) ), FormidableUserListManager::t( "Settings" ) );
+			array_unshift( $links, $link );
+		}
 		return $links;
 	}
 

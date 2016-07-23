@@ -44,8 +44,12 @@ class FormidableUserListManager {
 		$gManager = GManagerFactory::buildManager('FormidableUserListManager', 'formidable_user_list', self::getShort());
 		$admin = new FormidableUserListAdmin( $this->get_version(), $this->plugin_slug, $gManager );
 
-
-		$this->loader->add_action( 'frm_pro_available_fields', $admin, 'add' . self::getShort() . 'Field' );
+		if ( !class_exists( "FrmProAppController" ) ) {
+			$this->loader->add_action( 'frm_pro_available_fields', $admin, 'add' . self::getShort() . 'Field' );
+		}
+		else{
+			$this->loader->add_action( 'frm_available_fields', $admin, 'add' . self::getShort() . 'Field' );
+		}
 		$this->loader->add_action( 'frm_before_field_created', $admin, 'set' . self::getShort() . 'Options' );
 		$this->loader->add_action( 'frm_display_added_fields', $admin, 'show' . self::getShort() . 'AdminField' );
 		$this->loader->add_action( 'frm_field_options_form', $admin, 'field' . self::getShort() . 'OptionForm', 10, 3 );

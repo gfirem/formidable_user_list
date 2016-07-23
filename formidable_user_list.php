@@ -3,7 +3,7 @@
  * Plugin Name:       Formidable user list
  * Plugin URI:        https://github.com/gfirem/formidable_user_list
  * Description:       Select user from select and save id of user
- * Version:           1.06
+ * Version:           1.07
  * Author:            Guillermo Figueroa Mesa
  * Author URI:        http://wwww.gfirem.com
  * Text Domain:       formidable_user_list-locale
@@ -42,20 +42,18 @@ function FormidableUserListBootLoader() {
 	$manager->run();
 }
 
-register_activation_hook(__FILE__, "checkRequired");
-
-function checkRequired(){
-	if(!class_exists("FrmProAppController")){
+function checkRequiredFormidableUserList() {
+	if ( !class_exists( "FrmHooksController" ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
-		add_action( 'admin_notices', 'errorNotice' );
+		wp_die(
+			FormidableUserListManager::t( 'This plugins required Formidable to run!' ),
+			FormidableUserListManager::t( 'Formidable User List' ),
+			array('back_link'=> true)
+		);
 	}
 }
 
-function errorNotice() {
-	$class = 'notice notice-error';
-	$message = FormidableUserListManager::t( 'This plugins required Formidable Pro to run!' );
-	printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
-}
+register_activation_hook( __FILE__, "checkRequiredFormidableUserList" );
 
 /**
  * Add translation files
